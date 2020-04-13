@@ -1,0 +1,48 @@
+children:
+  - Assertions
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/v2/statistic/download'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "attributes": [
+          "lead_id"
+        ],
+        "groupBy": [
+          "lead_id",
+          "brand_id"
+        ],
+        "skip": 0,
+        "order": "lead_id DESC",
+        "limit": 30,
+        "prewhere": {
+          "lead_id": {
+            "!": 0
+          }
+        },
+        "where": {
+          "affiliate_id": ${$dynamicVar.affiliate_id},
+          "status": {
+            ">": 0
+          }
+        }
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: verifyLeadInAffiliateTable

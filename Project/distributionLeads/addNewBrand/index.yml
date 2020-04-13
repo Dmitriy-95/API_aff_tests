@@ -1,0 +1,15 @@
+children:
+  - addBrand Copy
+  - getBrands Copy
+  - getAPI_id Copy
+  - setAPI_id Copy
+  - addCountryForBrand
+variables: {}
+type: Folder
+authData:
+  type: inherit
+requestData:
+  headers: []
+  disabledInheritedHeaders: []
+  strictSSL: Inherit
+name: addNewBrand

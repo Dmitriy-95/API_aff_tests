@@ -1,0 +1,46 @@
+children:
+  - Assertions
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project
+    path: 'body[''affiliate_creative''][''hash'']'
+    variable: hashCodeAffiliate
+  - assign:
+      type: reference
+      refNodePath: Project
+    path: 'body[''affiliate''][''affiliate_id'']'
+    variable: affiliate_id
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/v2/affiliate'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "plan": "cpa",
+        "username": "testAffiliate_${$dynamicVar.firstComponent}_${$dynamicVar.secondComponent}",
+        "company": "testAffiliate_${$dynamicVar.firstComponent}_${$dynamicVar.secondComponent}",
+        "email": "testAffiliate_${$dynamicVar.firstComponent}_${$dynamicVar.secondComponent}@fx.com",
+        "status": 30,
+        "payment_methods": "test_${$dynamicVar.firstComponent}_${$dynamicVar.secondComponent}",
+        "phone": "+79999999999",
+        "password": "12345",
+        "confirmation": "12345"
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: addAffiliate

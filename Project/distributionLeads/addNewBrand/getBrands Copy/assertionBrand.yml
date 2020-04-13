@@ -1,0 +1,18 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: script
+    script: |-
+      let resp = tm.currentNode.parent.response.body.items;
+      let lastBrand = resp[resp.length -1];
+      let brandID_getted = lastBrand.brand_id;
+      let brandID_created = tm.currentNode.parent.dynamicVars.newBrand_id
+
+      console.log(brandID_created);
+
+      return brandID_getted == brandID_created;
+    name: assertionBrand
+name: assertionBrand

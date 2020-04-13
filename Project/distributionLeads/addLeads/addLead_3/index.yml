@@ -1,0 +1,30 @@
+children:
+  - verifyAddLead
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project/distributionLeads/addLeads
+    path: 'body[''data''][''brand''][''brand_id'']'
+    variable: currentBrand
+requestData:
+  request:
+    method: POST
+    url: >-
+      http://bitcoinmillions.today.unilanding.test.unilanding.stacks.filiatix.com/users/ajax/${$dynamicVar.hashCodeAffiliate}
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: "{\r\n  \"name\": \"testLead_${$dynamicVar.secondComponent}_3\",\r\n  \"lastname\": \"testLead_${$dynamicVar.secondComponent}_3\",\r\n  \"phone\": \"+7978${$dynamicVar.phoneRandom}3\",\r\n  \"password\": \"12345\",\r\n  \"email\": \"testLead_${$dynamicVar.secondComponent}_3@fx.com\",\r\n  \"country_id\": \"pt\",\r\n  \"language\": \"AA\",\r\n  \"aff_id\": \"COLD\",\r\n  \"from_url\": \"bitcoin-trader\",\r\n  \"specific_data\": {\r\n    \"from_url\": \"spec_data\",\r\n    \"domain\": \"domainTest\"\r\n  }\r\n}"
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: inherit
+name: addLead_3

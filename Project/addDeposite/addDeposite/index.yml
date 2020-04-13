@@ -1,0 +1,25 @@
+children:
+  - Assertions
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: POST
+    url: 'http://backend.test.leadsmarket.stacks.filiatix.com/history'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: "{\r\n  \"download\": ${$dynamicVar.download_id},\r\n  \"ftd_date\": \"2020-01-28T05:05:01.000Z\",\r\n  \"deposit\": 10,\r\n  \"balance\": 100,\r\n  \"status\": 5,\r\n  \"externalStatus\": \"Deposited\"\r\n}"
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: addDeposite

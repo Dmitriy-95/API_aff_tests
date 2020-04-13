@@ -1,0 +1,38 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project
+    path: 'body[''traffic_rule_id'']'
+    variable: traffic_rule_id
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/v2/trafficrule'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "brand_id": ${$dynamicVar.brand_id},
+        "comment": "language directly",
+        "alternative_brands_ids": [],
+        "type": 126,
+        "affiliate_id": "${$dynamicVar.affiliate_id}",
+        "check": true,
+        "priority": 100
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: addBrandToAffiliate

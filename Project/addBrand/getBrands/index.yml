@@ -1,0 +1,28 @@
+children:
+  - assertionBrand
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: GET
+    url: '${BaseURL}/v2/brand?limit=-1'
+  headers: []
+  disabledInheritedHeaders: []
+  params:
+    - name: limit
+      value: '-1'
+      isChecked: true
+  body:
+    type: Json
+    jsonBody: ''
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: getBrands

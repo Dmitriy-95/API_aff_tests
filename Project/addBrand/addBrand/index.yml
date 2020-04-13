@@ -1,0 +1,35 @@
+children:
+  - Assertions
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project
+    path: 'body[''brand_id'']'
+    variable: brand_id
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/v2/brand'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "name": "testBrend_${$dynamicVar.firstComponent}_${$dynamicVar.secondComponent}",
+        "password": "12345",
+        "confirmation": "12345"
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: addBrand

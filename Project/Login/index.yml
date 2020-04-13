@@ -1,0 +1,34 @@
+children:
+  - Assertions
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project
+    path: 'body[''token'']'
+    variable: token
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/login'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "img_size": 300,
+        "email": "manager@test.com",
+        "password": "Aa1234"
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: inherit
+name: Login

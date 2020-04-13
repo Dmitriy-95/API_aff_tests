@@ -1,0 +1,48 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/api/${$dynamicVar.api_id}'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "brand": ${$dynamicVar.newBrand_id},
+        "brandstatistics": ${$dynamicVar.newBrand_id},
+        "affiliate": 5,
+        "platform": 1,
+        "saved_by": 1,
+        "api_id": ${$dynamicVar.api_id},
+        "name": "default-brand-${$dynamicVar.newBrand_id}",
+        "url": "http://brandmock.local",
+        "login": "TestPlatform",
+        "password": "password",
+        "params": {
+          "referral": "referral auth code_${$dynamicVar.newBrand_id}",
+          "partner_id": "${$dynamicVar.newBrand_id}",
+          "login_url_template": "http://brandmock.test.leadsmarket.stacks.filiatix.com/api/ItraderSystem/v1.0/alogin.aspx?username={email}&password={password}&url=en-us/myaccount/fundtransfers/depositfunds.asp",
+          "partner_secret_key": "${$dynamicVar.newBrand_id}"
+        },
+        "response_rules": null,
+        "created": "2020-02-10T12:26:35.000Z",
+        "updated": "2020-02-10T12:26:35.000Z",
+        "deletedAt": null,
+        "requestLimit": 60,
+        "isCustomer": true
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: setAPI_id Copy

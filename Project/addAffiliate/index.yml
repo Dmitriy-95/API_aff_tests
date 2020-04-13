@@ -1,0 +1,12 @@
+children:
+  - addAffiliate
+  - getAffiliates
+variables: {}
+type: Folder
+authData:
+  type: inherit
+requestData:
+  headers: []
+  disabledInheritedHeaders: []
+  strictSSL: Inherit
+name: addAffiliate

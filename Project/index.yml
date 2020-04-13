@@ -1,0 +1,44 @@
+projectUId: 895f3030-4346-11ea-89c0-05c002fb6bdd
+type: Project
+name: Project
+environments:
+  environments: {}
+children:
+  - Login
+  - var
+  - addAffiliate
+  - addBrand
+  - brandToAffiliate
+  - addLead
+  - addDeposite
+  - distributionLeads
+variables:
+  BaseURL: 'http://backend.test.leadsmarket.stacks.filiatix.com'
+authData:
+  type: inherit
+settings:
+  proxy:
+    enable: false
+requestData:
+  headers: []
+  disabledInheritedHeaders: []
+  strictSSL: 'No'
+cookies:
+  - >-
+    PHPSESSID=3f6540de0d199dd42b749ed480; Expires=Mon Feb 17 2020 22:51:20
+    GMT+0300 (Москва, стандартное время);
+    Domain=bitcoinmillions.today.unilanding.test.unilanding.stacks.filiatix.com;
+    Path=/; HttpOnly;
+  - >-
+    PHPSESSID.sig=B_vMtHA2HeXWk0ojqqc3HonA3ZU; Expires=Mon Feb 17 2020 22:51:20
+    GMT+0300 (Москва, стандартное время);
+    Domain=bitcoinmillions.today.unilanding.test.unilanding.stacks.filiatix.com;
+    Path=/; HttpOnly;
+  - >-
+    match_code=326fe1edeb037e74e593; Expires=Infinity;
+    Domain=today.unilanding.test.unilanding.stacks.filiatix.com; Path=/;
+    HttpOnly;
+  - >-
+    match_code.sig=53pXbOCYtLkYMHeqpyz3LcM4HoU; Expires=Infinity;
+    Domain=today.unilanding.test.unilanding.stacks.filiatix.com; Path=/;
+    HttpOnly;

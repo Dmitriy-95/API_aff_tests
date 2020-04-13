@@ -1,0 +1,5 @@
+children: []
+variables: {}
+type: Script
+name: var
+script: "function randomInteger(min, max) {\r\n  let rand = min + Math.random() * (max + 1 - min);\r\n  return Math.floor(rand);\r\n}\r\nconsole.log(randomInteger(0, 99));\r\n\r\n\r\nlet now = new Date();\r\nlet firstComponent = now.getFullYear() + now.getMonth() + now.getDate() + randomInteger(0, 99);\r\nlet secondComponent = now.getHours() + now.getMinutes() + now.getSeconds() + randomInteger(0, 99);\r\n\r\ntm.currentNode.parent.setDynamicVar('firstComponent', Number(firstComponent));\r\ntm.currentNode.parent.setDynamicVar('secondComponent', Number(secondComponent));\r\ntm.currentNode.parent.setDynamicVar('phoneRandom', randomInteger(1000000, 9999999));\r\n\r\nconsole.log( now );\r\nconsole.log( firstComponent );\r\nconsole.log( secondComponent );\r\nconsole.log( randomInteger(100000, 999999));\r\n"

@@ -1,0 +1,20 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''user''][''status'']}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '30'
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''token'']}'
+    operator: not equal
+    expectedValueType: string
+    expectedValue: 'null'
+    name: Token assertion
+name: Assertions

@@ -1,0 +1,16 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body.status}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '200'
+  - disabled: false
+    negative: false
+    type: script
+    script: "let countBrand_1 = tm.currentNode.parent.dynamicVars.countBrand_1;\r\nlet countBrand_2 = tm.currentNode.parent.dynamicVars.countBrand_2;\r\n\r\nlet brandId_1 = tm.currentNode.parent.dynamicVars.brand_id;\r\nlet brandId_2 = tm.currentNode.parent.dynamicVars.newBrand_id;\r\n\r\nlet currentBrand = tm.currentNode.parent.dynamicVars.currentBrand;\r\n\r\nif(currentBrand == brandId_1){\r\n  countBrand_1 += 1;\r\n}\r\nelse if (currentBrand == brandId_2){\r\n  countBrand_2 += 1;\r\n}\r\n\r\nconsole.log(countBrand_1);\r\nconsole.log(countBrand_2);\r\n\r\ntm.currentNode.parent.setDynamicVar('countBrand_1', countBrand_1);\r\ntm.currentNode.parent.setDynamicVar('countBrand_2', countBrand_2);\r\n"
+name: verifyAddLead

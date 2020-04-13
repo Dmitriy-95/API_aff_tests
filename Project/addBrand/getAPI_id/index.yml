@@ -1,0 +1,32 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project/addBrand
+    path: 'body[''items''][0][''api_id'']'
+    variable: api_id
+requestData:
+  request:
+    method: GET
+    url: '${BaseURL}/api?brand_id=${$dynamicVar.brand_id}'
+  headers: []
+  disabledInheritedHeaders: []
+  params:
+    - name: brand_id
+      value: '${$dynamicVar.brand_id}'
+      isChecked: true
+  body:
+    type: Json
+    jsonBody: ''
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: getAPI_id

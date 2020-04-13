@@ -1,0 +1,13 @@
+children:
+  - addNewBrand
+  - setTrafficrule
+  - addLeads
+variables: {}
+type: Folder
+authData:
+  type: inherit
+requestData:
+  headers: []
+  disabledInheritedHeaders: []
+  strictSSL: Inherit
+name: distributionLeads

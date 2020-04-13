@@ -1,0 +1,12 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''is_brand'']}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: 'true'
+name: Assertions

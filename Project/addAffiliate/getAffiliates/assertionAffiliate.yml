@@ -1,0 +1,18 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: script
+    script: |-
+      let resp = tm.currentNode.parent.response.body.items;
+      let lastAffiliate = resp[resp.length -1];
+      let affiliateID_getted = lastAffiliate.affiliate_id;
+      let affiliateID_created = tm.currentNode.parent.dynamicVars.affiliate_id;
+
+      console.log(affiliateID_created);
+
+      return affiliateID_created == affiliateID_getted;
+    name: assertionAffiliate
+name: assertionAffiliate

@@ -1,0 +1,25 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: DELETE
+    url: >-
+      http://backend.test.leadsmarket.stacks.filiatix.com/v2/trafficrule/${$dynamicVar.traffic_rule_id}
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: ''
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: clean

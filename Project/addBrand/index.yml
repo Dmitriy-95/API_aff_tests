@@ -1,0 +1,14 @@
+children:
+  - addBrand
+  - getBrands
+  - getAPI_id
+  - setAPI_id
+variables: {}
+type: Folder
+authData:
+  type: inherit
+requestData:
+  headers: []
+  disabledInheritedHeaders: []
+  strictSSL: Inherit
+name: addBrand

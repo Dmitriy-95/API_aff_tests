@@ -1,0 +1,36 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables:
+  - assign:
+      type: reference
+      refNodePath: Project/addDeposite
+    path: 'body[''items''][0][''download_id'']'
+    variable: download_id
+requestData:
+  request:
+    method: GET
+    url: >-
+      http://backend.test.leadsmarket.stacks.filiatix.com/brand/21/downloaded?brand_id=${$dynamicVar.brand_id}&limit=-1
+  headers: []
+  disabledInheritedHeaders: []
+  params:
+    - name: brand_id
+      value: '${$dynamicVar.brand_id}'
+      isChecked: true
+    - name: limit
+      value: '-1'
+      isChecked: true
+  body:
+    type: Json
+    jsonBody: ''
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: getDownload_id

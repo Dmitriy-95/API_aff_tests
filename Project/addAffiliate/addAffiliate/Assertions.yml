@@ -1,0 +1,12 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''affiliate''][''status'']}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '30'
+name: Assertions

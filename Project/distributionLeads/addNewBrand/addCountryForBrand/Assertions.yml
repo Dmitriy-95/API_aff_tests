@@ -1,0 +1,12 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''name'']}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: 'default tier for brand: ${$dynamicVar.newBrand_id}'
+name: Assertions

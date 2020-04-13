@@ -1,0 +1,33 @@
+children: []
+variables: {}
+type: RequestStep
+assignVariables: []
+requestData:
+  request:
+    method: POST
+    url: '${BaseURL}/v2/trafficrule'
+  headers: []
+  disabledInheritedHeaders: []
+  params: []
+  body:
+    type: Json
+    jsonBody: |-
+      {
+        "brand_id": ${$dynamicVar.newBrand_id},
+        "comment": "language directly",
+        "alternative_brands_ids": [],
+        "type": 126,
+        "affiliate_id": "${$dynamicVar.affiliate_id}",
+        "check": true,
+        "priority": 30
+      }
+    xmlBody: ''
+    textBody: ''
+    formData: []
+    file: ''
+    formURLEncoded: []
+  strictSSL: Inherit
+authData:
+  type: Bearer token
+  token: '${$dynamicVar.token}'
+name: settTafficrule Copy

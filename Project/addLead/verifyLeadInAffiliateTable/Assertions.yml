@@ -1,0 +1,19 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body[''items''][0][''lead_id'']}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '${$dynamicVar.lead_id}'
+  - disabled: true
+    negative: false
+    type: compare
+    actualValue: '${$response.body.criteria.affiliate_id}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '${$dynamicVar.affiliate_id}'
+name: Assertions

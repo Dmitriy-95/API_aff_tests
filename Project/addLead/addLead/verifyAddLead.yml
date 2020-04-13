@@ -1,0 +1,19 @@
+children: []
+variables: {}
+type: Assertion
+assertions:
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body.status}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '200'
+  - disabled: false
+    negative: false
+    type: compare
+    actualValue: '${$response.body.data.brand.brand_id}'
+    operator: equal
+    expectedValueType: string
+    expectedValue: '${$dynamicVar.brand_id}'
+name: verifyAddLead
